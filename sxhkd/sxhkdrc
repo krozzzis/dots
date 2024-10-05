@@ -1,0 +1,49 @@
+super + Return    
+  wezterm
+
+# super + p
+#   dmenu_run
+
+super + p
+  rofi -show run
+
+super + b
+  ~/.scripts/bar-toggle.sh
+
+super + shift + b
+  boomer
+
+super + e
+  thunar
+
+super + ctrl + l
+  firefox
+
+super + ctrl + o
+  obsidian
+
+# Python REPL with math included
+super + ctrl + p
+  wezterm -e python3 -i -c "from math import *"
+
+Print
+  $HOME/.scripts/screenshot.sh
+
+# close and kill
+super + shift + c
+  bspc node -c
+
+# alternate between the tiled and monocle layout
+super + space
+  bspc node -t "~"{floating,tiled}
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+# focus or send to the given desktop
+super + {1-9,0}
+  bspc desktop -f {1-9,0}
+
+super + shift + {1-9,0}
+  bspc node -d {1-9,0}
